@@ -24,7 +24,8 @@ hs_err_pid*
 
 HELP.md
 /target/
-!.mvn/wrapper/maven-wrapper.jar
+# https://github.com/takari/maven-wrapper#usage-without-binary-jar
+.mvn/wrapper/maven-wrapper.jar
 
 ### STS ###
 .apt_generated
@@ -34,6 +35,9 @@ HELP.md
 .settings
 .springBeans
 .sts4-cache
+
+# Mac
+.DS_Store
 
 ### IntelliJ IDEA ###
 .idea
@@ -51,3 +55,4 @@ HELP.md
 
 ### VS Code ###
 .vscode/
+*.bak
