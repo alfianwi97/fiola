@@ -1,0 +1,31 @@
+---
+applications:
+  - name: fiola
+    disk_quota: 512M
+    instances: 2
+    memory: 1.5G
+    health-check-http-endpoint: /fiola-svc-int/actuator/health
+    health-check-type: http
+    health-check-invocation-timeout: 10
+    timeout: 20
+    path: ./target/fiola-svc-int.war
+    buildpacks: 
+      - java_buildpack_offline
+    env:
+      SPRING_PROFILES_ACTIVE: dev
+      JBP_CONFIG_TOMCAT: '[tomcat: {context_path: "/fiola-svc-int"}]'
+      
+#    processes:
+#    - type: web
+#      disk_quota: 512M
+#      instances: 2
+#      memory: 256M
+#      health-check-http-endpoint: /fiola-svc-int/actuator/health
+#      health-check-type: http
+ #     health-check-invocation-timeout: 10
+  #    timeout: 20
+    
+#  routes:
+#  - route: www.example.com/fiola
+
+    
